@@ -1,0 +1,26 @@
+Lista de exercícios 7
+
+1) Com base no código-exemplo "exemplo_sinal.c":
+1.1) Implemente a captura para os sinais STOP, CONT e TERM
+1.2) Implemente a captura dos comandos CTRL+C, CTRL+\ e CTRL+Z
+1.3) Implemente o tratamento dos sinais recebidos, informando em mensagem o código e o tipo de sinal (exceto para o SIGKILL e SIGSTP)
+
+2) Com base no código-exemplo "exemplo_alarm.c":
+2.1) Implemente a captura do ALARM e gere uma mensagem "amigável", evitando o encerramento do processo.
+
+3) Com base no código-exemplo "exemplo_suspend.c":
+3.1) Comentar a linha de código do comando "sigsuspend" e incluir a linha sleep(1). Em outro terminal, enviar o comando SIGUSR1. Qual o comportamento observado?
+
+4) Implemente um programa que ao receber o sinal SIGUSR2, execute uma função que abra o navegador firefox. A URL deve ser digitada pelo usuário previamente à chamada.
+
+5) Implemente um programa de forma que quando (e se) o processo receber o sinal
+SIGINT a funcao sinal_chegou seja acionada pelo sistema para tratar esse sinal.
+Dica: Para testar, qual é uma maneira fácil de gerar SIGINT para um processo em um
+terminal?
+
+6) Modifique o programa para que a URL a ser exibida pelo firefox, não seja
+mais digitada pelo usuário e seja recebida pelo programa como argumento da linha
+de comando.
+Dica: Como passar/compartilhar informações entre o main e a função do tratador do
+sinal?
+

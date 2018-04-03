@@ -1,0 +1,30 @@
+*****ALGUNS COMANDOS PARA TERMINAL E OUTRAS DICAS*****
+
+ls - lista pastas
+
+cd - acessa pasta
+
+
+
+Problemas com float? Use %lf
+
+
+
+
+Para compilar arquivos em c
+
+gcc -Wall nomearquivo.c -o nomearquivo 
+
+-l rt
+
+-l rt -> API Fila de mensagens
+
+-l pthread -> API POSIX Threads
+
+
+
+Para executar arquivos em c
+
+./nomearquivo
+
+

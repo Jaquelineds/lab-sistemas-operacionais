@@ -1,0 +1,99 @@
+Lista de exercícios 8
+
+6) Apresente um exemplo de uso do comando od do unix.
+
+$ od teste
+0000000 062564 072163 020145 067544 067440 005144
+0000014
+
+7) Apresente um exemplo de uso do comando strace do unix.
+
+$ strace ./ex1
+execve("./ex1", ["./ex1"], [/* 72 vars */]) = 0
+brk(NULL)                               = 0xa64000
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fee7c35d000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=87909, ...}) = 0
+mmap(NULL, 87909, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fee7c347000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260`\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=138696, ...}) = 0
+mmap(NULL, 2212904, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fee7bf1d000
+mprotect(0x7fee7bf35000, 2093056, PROT_NONE) = 0
+mmap(0x7fee7c134000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x17000) = 0x7fee7c134000
+mmap(0x7fee7c136000, 13352, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fee7c136000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\t\2\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=1868984, ...}) = 0
+mmap(NULL, 3971488, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fee7bb53000
+mprotect(0x7fee7bd13000, 2097152, PROT_NONE) = 0
+mmap(0x7fee7bf13000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c0000) = 0x7fee7bf13000
+mmap(0x7fee7bf19000, 14752, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fee7bf19000
+close(3)                                = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fee7c346000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fee7c345000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fee7c344000
+arch_prctl(ARCH_SET_FS, 0x7fee7c345700) = 0
+mprotect(0x7fee7bf13000, 16384, PROT_READ) = 0
+mprotect(0x7fee7c134000, 4096, PROT_READ) = 0
+mprotect(0x600000, 4096, PROT_READ)     = 0
+mprotect(0x7fee7c35f000, 4096, PROT_READ) = 0
+munmap(0x7fee7c347000, 87909)           = 0
+set_tid_address(0x7fee7c3459d0)         = 8226
+set_robust_list(0x7fee7c3459e0, 24)     = 0
+rt_sigaction(SIGRTMIN, {0x7fee7bf22b50, [], SA_RESTORER|SA_SIGINFO, 0x7fee7bf2e390}, NULL, 8) = 0
+rt_sigaction(SIGRT_1, {0x7fee7bf22be0, [], SA_RESTORER|SA_RESTART|SA_SIGINFO, 0x7fee7bf2e390}, NULL, 8) = 0
+rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+getrlimit(RLIMIT_STACK, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fee7b352000
+brk(NULL)                               = 0xa64000
+brk(0xa85000)                           = 0xa85000
+mprotect(0x7fee7b352000, 4096, PROT_NONE) = 0
+clone(child_stack=0x7fee7bb51ff0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7fee7bb529d0, tls=0x7fee7bb52700, child_tidptr=0x7fee7bb529d0) = 8227
+mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0Meu ID: 140662254413568, ID do Pai:140662262748928
+) = 0x7fee7ab51000
+mprotect(0x7fee7ab51000, 4096, PROT_NONE) = 0
+clone(child_stack=0x7fee7b350ff0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7fee7b3519d0, tls=0x7fee7b351700, child_tidptr=0x7fee7b3519d0) = 8228
+Meu ID: 140662246020864, ID do Pai:140662262748928
+mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fee7a350000
+mprotect(0x7fee7a350000, 4096, PROT_NONE) = 0
+clone(child_stack=0x7fee7ab4fff0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7fee7ab509d0, tls=0x7fee7ab50700, child_tidptr=0x7fee7ab509d0) = 8229
+Meu ID: 140662237628160, ID do Pai:140662262748928
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=87909, ...}) = 0
+mmap(NULL, 87909, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fee7c347000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0p*\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=89696, ...}) = 0
+mmap(NULL, 2185488, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fee7a13a000
+mprotect(0x7fee7a150000, 2093056, PROT_NONE) = 0
+mmap(0x7fee7a34f000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x15000) = 0x7fee7a34f000
+close(3)                                = 0
+munmap(0x7fee7c347000, 87909)           = 0
+futex(0x7fee7a34f680, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+exit(0)                                 = ?
+Ola, estou aqui! maria!
+Ola, estou aqui! jose!
+Ola, estou aqui! bento!
+Ola, estou aqui! jose!
+Ola, estou aqui! maria!
+Ola, estou aqui! bento!
+Ola, estou aqui! jose!
+Ola, estou aqui! maria!
+Ola, estou aqui! bento!
+Ola, estou aqui! maria!
+Ola, estou aqui! jose!
+Ola, estou aqui! bento!
+Ola, estou aqui! jose!
+Ola, estou aqui! maria!
+Ola, estou aqui! bento!
++++ exited with 0 +++
+

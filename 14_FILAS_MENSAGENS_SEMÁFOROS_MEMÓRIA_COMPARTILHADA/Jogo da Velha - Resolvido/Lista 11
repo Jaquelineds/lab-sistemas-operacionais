@@ -1,0 +1,9 @@
+Implemente um programa em C, chamado "Jogo da velha", que possibilite através das técnicas de IPC estudadas, que 2 jogadores (processos) no mesmo ambiente, possam competir para ganhar o jogo.
+
+O processo dos jogadores deve enviar valores de coordenadas do jogo da velha, por linha de comando: X Y - Lembrando que a matriz é 3 X 3. Deve-se validar se a coordenada é válida.
+
+Deve-se ter um processo centralizador das jogadas, que exibe a cada lance, a atualização do tabuleiro do jogo. Ao final, assim que houver um ganhador, deve-se informar o jogador vencedor (deve-se garantir um mecanismo de identificação do nome do jogador - à sua livre escolha). O processo centralizador deve informar a cada lance, com mensagens apropriadas, se o lance foi válido ou se precisa ser repetido.
+
+Enviar zip com todos os fontes, identificando os integrantes do grupo.
+
+Prazo: 16/11 19h.

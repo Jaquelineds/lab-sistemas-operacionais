@@ -1,0 +1,35 @@
+Prova GA
+
+Crie um programa em shell script denominado sistemaintegrado.sh. 
+
+1) (1 ponto) Esse programa deve exibir um menu com 3 op��es para o usu�rio escolher, digitado pela entrada padr�o, conforme o exemplo abaixo:
+
+****** SISTEMA INTEGRADO ******
+1 - Contabilidade
+2 - Vendas
+3 - Sair
+*******************************
+
+Este programa deve ficar executando em primeiro plano enquanto a entrada digitada for diferente de 3.
+
+2) (1 ponto) A op��o 3 deve encerrar a execu��o do programa principal (sistemaintegrado.sh), com status de termina��o de sucesso e mensagem de agradecimento (Ex. "Obrigado por utilizar o Sistema Integrado").
+
+3) (3 pontos) Se selecionada a op��o 1 deve abrir o programa contabilidade implementado em C (contabilidade.c). O programa contabilidade dever� receber como entrada pela linha de comando o sal�rio anual do colaborador.
+- Se o salario mensal m�dio for menor que 2.000, deve ser executado como processo filho o programa simplificado.c. O programa simplificado.c exibe a mensagem na sa�da padr�o a data/hora atual seguido da mensagem "Isento do imposto de renda!".
+- Se o salario mensal m�dio for maior ou igual a 2.000, deve ser aberto o navegador padr�o (ex. Firefox) na p�gina da Receita Federal do Brasil (RFB): www.receita.fazenda.gov.br
+
+4) (3 pontos) O programa contabilidade.c deve aguardar a conclus�o do processo filho. Exibindo o seu PID e de seu pai. Os processos filhos tamb�m devem exibir os seus PIDs e de seu pai.
+Al�m disso, o processo contabilidade deve capturar e tratar sinais. 
+- Se for recebido o sinal SIGUSR1, deve ser emitida a mensagem: "Sinal recebido. Aguardar a conclus�o do processo filho!".
+- Se for recebido o sinal SIGUSR2, deve ser emitida a mensagem: "Sinal recebido. Ainda em processamento..."
+
+5) (2 pontos)  Se selecionada a op��o 2 no menu do sistemaintegrado deve-se abrir o programa vendas implementado em C (vendas.c). 
+- O programa vendas dever� ler na entrada padr�o: quantidade e pre�o de custo unit�rio.
+- Dever� calcular e exibir na sa�da padr�o: 
+(A) O valor de custo total do produto � XXXX (quantidade x pre�o custo unit�rio)
+(B) O valor de margem de contribui��o � YYYY (calcular 50% sobre o valor de custo total)
+(C) O valor do ICMS para o produto � ZZZZ (calcular 17% sobre o valor de custo total + margem de contribui��o)
+(D) O valor de venda do produto � WWWW (somat�ria dos valores A, B e C).
+
+Enviar os arquivos .sh e .c, zipados com o nome do aluno comentado em todos os arquivos fontes.
+
